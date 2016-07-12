@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Demo01.WellKnownLeaks
+namespace Demo01.WellKnownLeaks.InstanceEventLeak
 {
     internal class Program
     {
