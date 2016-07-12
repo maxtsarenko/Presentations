@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 
 namespace Demo02.WellKnownLeaks.StaticEventLeak
 {
@@ -20,7 +21,7 @@ namespace Demo02.WellKnownLeaks.StaticEventLeak
 
             Console.Out.WriteLine("Converting him to zombie...");
 
-            ConvertToZombie();
+            ConvertToZombie(citizen);
 
             Console.Out.WriteLine(MakeASnapshotHere + " and see if citizen is infected");
             Console.ReadLine();
@@ -30,11 +31,27 @@ namespace Demo02.WellKnownLeaks.StaticEventLeak
             Console.ReadKey();
         }
 
-        private static void ConvertToZombie()
+        private static void ConvertToZombie(Citizen citizen)
         {
             var zombie = new Zombie(bones: new Kg(40), flesh: new Kg(60));
 
             Citizen.Yelled += zombie.BiteAndInfect;
+
+            DoActivity(citizen);
+
+            Citizen.Yelled -= zombie.BiteAndInfect;
+        }
+
+        private static void DoActivity(Citizen citizen)
+        {
+            Console.Out.WriteLine("Doing some activity...");
+
+            citizen.Freighten();
+
+            Thread.Sleep(TimeSpan.FromSeconds(3));
+
+
+            Console.Out.WriteLine("Activity is done.");
         }
     }
 
