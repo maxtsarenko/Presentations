@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,8 +7,12 @@ namespace Demo03.WellKnownLeaks.StaticCollectionGrow
 {
     public partial class LeakyForm : Form
     {
-        public LeakyForm()
+        private readonly List<Zombie> _zombies;
+
+        public LeakyForm(List<Zombie> zombies)
         {
+            _zombies = zombies;
+
             InitializeComponent();
         }
 
@@ -17,20 +22,27 @@ namespace Demo03.WellKnownLeaks.StaticCollectionGrow
             {
                 var zombie = new Zombie(new Kg(30), new Kg(60));
 
-                CollectionHost.Zombies.Add(zombie);
+                _zombies.Add(zombie);
             }
 
-            var counter = new ZombieBonesCounter();
+            var counter = new ZombieBonesCounter(_zombies);
 
-            MessageBox.Show($"{CollectionHost.Zombies.Count} zombies have {counter.Total} of bones");
+            MessageBox.Show($"{_zombies.Count} zombies have {counter.Total} of bones");
         }
     }
 
     internal class ZombieBonesCounter
     {
+        private readonly List<Zombie> _zombies;
+
+        public ZombieBonesCounter(List<Zombie> zombies)
+        {
+            _zombies = zombies;
+        }
+
         public Kg Total
         {
-            get { return new Kg((int) CollectionHost.Zombies.Sum(z => z.Bones)); }
+            get { return new Kg((int) _zombies.Sum(z => z.Bones)); }
         }
     }
 }

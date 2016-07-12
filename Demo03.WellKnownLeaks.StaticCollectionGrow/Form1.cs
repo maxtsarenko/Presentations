@@ -18,7 +18,7 @@ namespace Demo03.WellKnownLeaks.StaticCollectionGrow
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var leakyForm = new LeakyForm();
+            var leakyForm = new LeakyForm(CollectionHost.Zombies);
             leakyForm.ShowDialog(this);
         }
     }
