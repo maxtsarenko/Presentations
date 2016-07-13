@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo04.WpfLeaks.BindingLeak
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo05.WpfLeaks.CollectionBinding", "Demo05.WpfLeaks.CollectionBinding\Demo05.WpfLeaks.CollectionBinding.csproj", "{710588CB-33D6-4BDC-B3AF-76C12C08E6A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo06.WpfLeaks.XNameLeak", "Demo06.WpfLeaks.XNameLeak\Demo06.WpfLeaks.XNameLeak.csproj", "{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{710588CB-33D6-4BDC-B3AF-76C12C08E6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{710588CB-33D6-4BDC-B3AF-76C12C08E6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{710588CB-33D6-4BDC-B3AF-76C12C08E6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
