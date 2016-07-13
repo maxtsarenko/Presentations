@@ -1,0 +1,54 @@
+﻿<Window x:Class="Demo05.WpfLeaks.CollectionBinding.AnotherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo05.WpfLeaks.CollectionBinding"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="AnotherWindow" Height="300" Width="275">
+    <Window.Resources>
+        <local:KgConverter x:Key="cnvKg" />
+        
+        <DataTemplate x:Key="uiDataTemplate" DataType="ItemsControl">
+            <Grid Margin="0 12">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" >Flesh:</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" 
+            Text="{Binding Path=Flesh, Converter={StaticResource cnvKg}}" 
+            VerticalAlignment="Center"
+            Height="22" Width="50" HorizontalAlignment="Left" />
+                <TextBox Grid.Column="1" Grid.Row="1" 
+            Text="{Binding Path=Bones, Converter={StaticResource cnvKg}}" 
+            VerticalAlignment="Center"
+            Width="50" HorizontalAlignment="Left" Height="22" />
+                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">Bones:</TextBlock>
+            </Grid>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="41*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.ColumnSpan="2">
+            <ItemsControl ItemsSource="{Binding Path=Zombies}" ItemTemplate="{StaticResource uiDataTemplate}">
+            </ItemsControl>
+        </ScrollViewer>
+        <Button Content="Close"
+                HorizontalAlignment="Right" Grid.Row="2"
+                VerticalAlignment="Bottom" Width="75" Margin="12" IsDefault="True" IsCancel="True" Height="22" Grid.Column="1" />
+    </Grid>
+</Window>
