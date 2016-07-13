@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01.WellKnownLeaks.InstanceEventLeak", "Demo01.WellKnownLeaks\Demo01.WellKnownLeaks.InstanceEventLeak.csproj", "{E0A1C843-AC29-4B68-8C52-D650429206CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.WellKnownLeaks.StaticEventLeak", "Demo02.WellKnownLeaks.StaticEventLeak\Demo02.WellKnownLeaks.StaticEventLeak.csproj", "{1B0AFC47-F3B3-4A66-99AC-096B846D7927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo06.WpfLeaks.XNameLeak", "Demo06.WpfLeaks.XNameLeak\Demo06.WpfLeaks.XNameLeak.csproj", "{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1B0AFC47-F3B3-4A66-99AC-096B846D7927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B0AFC47-F3B3-4A66-99AC-096B846D7927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B0AFC47-F3B3-4A66-99AC-096B846D7927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F27CCA-7587-4EB1-B525-A0ABCF1737CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
